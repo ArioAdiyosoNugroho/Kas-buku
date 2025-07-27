@@ -1,0 +1,230 @@
+:root {
+    --primary-color: #0752c3;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #2a3139;
+    --primary-dark: #072b62;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1c1c1e;
+    color: #f8f9fa;
+}
+
+.dark-mode .navbar{
+    background-color: var(--primary-dark);
+}
+
+.navbar{
+    background-color: var(--primary-color);
+}
+
+/* ========================dark/light mode===================== */
+.dark-mode .card,
+.dark-mode .modal-content,
+.dark-mode .dropdown-menu {
+    background-color: #413f3f;
+    color: #f8f9fa;
+    border-color: #4e4949;
+}
+
+.dark-mode .table {
+    color: #f8f9fa;
+}
+
+.dark-mode .table-light {
+    background-color: #333;
+    color: #f8f9fa;
+}
+.dark-mode .card-header {
+    background-color: #333;
+}
+
+.dark-mode .table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .card-footer{
+    background-color: #333;
+    color: #f8f9fa;
+}
+
+.dark-mode .text-muted {
+    color: #adb5bd !important;
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+    background-color: #333;
+    border-color: #444;
+    color: #f8f9fa;
+}
+
+.dark-mode .input-group-text {
+    background-color: #444;
+    border-color: #555;
+    color: #f8f9fa;
+}
+
+.dark-mode .dropdown-divider {
+    border-color: #444;
+}
+
+/* Table dark mode: full black */
+.dark-mode .table,
+.dark-mode .table-responsive,
+.dark-mode .table-hover,
+.dark-mode .table-light,
+.dark-mode .card-header,
+.dark-mode .card-body {
+    background-color: #2d2e30 !important;
+    color: #f8f9fa !important;
+}
+
+.dark-mode .table thead,
+.dark-mode .table thead th,
+.dark-mode .table-light th {
+    background-color: #262728 !important;
+    color: #f8f9fa !important;
+    border-color: #333 !important;
+}
+
+.dark-mode .table tbody tr,
+.dark-mode .table tbody td,
+.dark-mode .table tbody th {
+    background-color: #2d2e30 !important;
+    color: #f8f9fa !important;
+}
+
+.dark-mode .table-hover tbody tr:hover,
+.dark-mode .table-hover tbody tr:hover td,
+.dark-mode .table-hover tbody tr:hover th {
+    background-color: #2d2e30 !important;
+    color: #f8f9fa !important;
+}
+
+/* =========================end dark mode========================= */
+/* Navbar customization */
+.navbar {
+    padding: 0.75rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Card customization */
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-header {
+    font-weight: 600;
+}
+
+/* Table customization */
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    border-bottom: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    color: var(--secondary-color);
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+
+
+/* Badge customization */
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+}
+
+/* Button customization */
+.btn {
+    font-weight: 500;
+    padding: 0.375rem 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Form customization */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+

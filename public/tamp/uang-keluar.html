@@ -1,0 +1,103 @@
+<!-- Struktur mirip dengan uang-masuk.html, dengan perubahan: -->
+<!-- ... -->
+<main class="container my-5">
+    <div class="row">
+        <!-- Sidebar -->
+
+        <div class="col-lg-9">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="mb-0">Pengeluaran</h2>
+                <button class="btn btn-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#tambahPengeluaranModal">
+                    <i class="fas fa-plus me-1"></i> Tambah Pengeluaran
+                </button>
+            </div>
+
+            <!-- Fitur Budget Tracker -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm rounded-3 border-danger">
+                        <div class="card-body py-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">Budget Bulan Ini</h6>
+                                    <p class="small text-muted mb-0">Rp 2.500.000 dari Rp 3.000.000 tersisa</p>
+                                </div>
+                                <div class="progress flex-grow-1 mx-3" style="height: 10px;">
+                                    <div class="progress-bar bg-danger" role="progressbar"
+                                         style="width: 83%;" aria-valuenow="83" aria-valuemin="0"
+                                         aria-valuemax="100"></div>
+                                </div>
+                                <span class="badge bg-danger">17% tersisa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pengeluaran Table (mirip dengan uang-masuk) -->
+            <!-- ... -->
+        </div>
+    </div>
+</main>
+
+<!-- Modal Tambah Pengeluaran -->
+<div class="modal fade" id="tambahPengeluaranModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tambah Pengeluaran</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formPengeluaran">
+                    <div class="mb-3">
+                        <label class="form-label">Tanggal</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Jumlah</label>
+                        <div class="input-group">
+                            <span class="input-group-text">Rp</span>
+                            <input type="number" class="form-control" placeholder="0" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Kategori</label>
+                        <select class="form-select" required>
+                            <option value="" selected disabled>Pilih Kategori</option>
+                            <option>Makanan</option>
+                            <option>Transportasi</option>
+                            <option>Hiburan</option>
+                            <option>Belanja</option>
+                            <option>Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Metode Pembayaran</label>
+                        <select class="form-select">
+                            <option>Tunai</option>
+                            <option>Debit</option>
+                            <option>Kredit</option>
+                            <option>E-Wallet</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Deskripsi</label>
+                        <textarea class="form-control" rows="3" placeholder="Tambahkan catatan"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Lampiran</label>
+                        <input type="file" class="form-control">
+                        <div class="form-text">Unggah bukti transaksi (optional)</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" form="formPengeluaran" class="btn btn-danger">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/uang-keluar.js"></script>

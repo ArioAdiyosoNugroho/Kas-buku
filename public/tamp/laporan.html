@@ -1,0 +1,112 @@
+<!-- Halaman Laporan -->
+<main class="container my-5">
+    <div class="row">
+        <!-- Sidebar -->
+
+        <div class="col-lg-9">
+            <h2 class="mb-4">Laporan Keuangan</h2>
+
+            <!-- Periode Laporan -->
+            <div class="card shadow-sm rounded-3 mb-4">
+                <div class="card-body">
+                    <form id="laporanForm">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label class="form-label">Dari Tanggal</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Sampai Tanggal</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Tipe Laporan</label>
+                                <select class="form-select">
+                                    <option selected>Ringkasan</option>
+                                    <option>Detail Transaksi</option>
+                                    <option>Kategori</option>
+                                    <option>Budget</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 d-flex align-items-end">
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="fas fa-search me-1"></i> Cari
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Hasil Laporan -->
+            <div class="card shadow-sm rounded-3 mb-4">
+                <div class="card-header bg-white border-0 py-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Laporan Bulan Juli 2023</h5>
+                        <div>
+                            <button class="btn btn-sm btn-outline-secondary me-2">
+                                <i class="fas fa-print me-1"></i> Cetak
+                            </button>
+                            <button class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-download me-1"></i> Unduh
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Ringkasan -->
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 text-center">
+                                <h6 class="text-muted">Total Pemasukan</h6>
+                                <h3 class="text-success">Rp 5.250.000</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 text-center">
+                                <h6 class="text-muted">Total Pengeluaran</h6>
+                                <h3 class="text-danger">Rp 3.750.000</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-3 text-center">
+                                <h6 class="text-muted">Saldo</h6>
+                                <h3 class="text-primary">Rp 1.500.000</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grafik -->
+                    <div class="mb-4">
+                        <canvas id="reportChart" height="250"></canvas>
+                    </div>
+
+                    <!-- Tabel Detail -->
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Kategori</th>
+                                    <th class="text-end">Pemasukan</th>
+                                    <th class="text-end">Pengeluaran</th>
+                                    <th class="text-end">Saldo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Gaji</td>
+                                    <td class="text-end text-success">Rp 4.500.000</td>
+                                    <td class="text-end">-</td>
+                                    <td class="text-end text-primary">Rp 4.500.000</td>
+                                </tr>
+                                <!-- More rows... -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="js/laporan.js"></script>

@@ -1,0 +1,118 @@
+<!-- Halaman Manajemen Kategori -->
+<main class="container my-5">
+    <div class="row">
+        <!-- Sidebar -->
+
+        <div class="col-lg-9">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="mb-0">Kelola Kategori</h2>
+                <button class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#tambahKategoriModal">
+                    <i class="fas fa-plus me-1"></i> Tambah Kategori
+                </button>
+            </div>
+
+            <!-- Kategori Cards -->
+            <div class="row">
+                <!-- Kategori Pemasukan -->
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm rounded-3 h-100">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Kategori Pemasukan</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Gaji
+                                    <div>
+                                        <button class="btn btn-sm btn-outline-secondary me-1">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                                <!-- More items... -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kategori Pengeluaran -->
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm rounded-3 h-100">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="mb-0">Kategori Pengeluaran</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Makanan
+                                    <div>
+                                        <button class="btn btn-sm btn-outline-secondary me-1">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                                <!-- More items... -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Modal Tambah Kategori -->
+<div class="modal fade" id="tambahKategoriModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tambah Kategori Baru</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formKategori">
+                    <div class="mb-3">
+                        <label class="form-label">Nama Kategori</label>
+                        <input type="text" class="form-control" placeholder="Contoh: Belanja Bulanan" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tipe</label>
+                        <select class="form-select" required>
+                            <option value="" selected disabled>Pilih Tipe</option>
+                            <option value="income">Pemasukan</option>
+                            <option value="expense">Pengeluaran</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Warna</label>
+                        <div class="d-flex flex-wrap gap-2">
+                            <input type="color" class="form-control form-control-color" value="#0d6efd" title="Pilih warna">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Icon</label>
+                        <div class="d-flex flex-wrap gap-2 icon-selector">
+                            <button type="button" class="btn btn-outline-secondary p-3 rounded-3">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary p-3 rounded-3">
+                                <i class="fas fa-utensils"></i>
+                            </button>
+                            <!-- More icons... -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" form="formKategori" class="btn btn-primary">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
