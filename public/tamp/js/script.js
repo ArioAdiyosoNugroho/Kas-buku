@@ -118,17 +118,17 @@ darkModeToggle.addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
     if (document.body.classList.contains('dark-mode')) {
         localStorage.setItem('darkMode', 'enabled');
-        darkModeToggle.innerHTML = '<i class="fas fa-sun me-1"></i> Mode Terang';
+        darkModeToggle.innerHTML = '<i class="fas fa-sun me-1"></i>';
     } else {
         localStorage.setItem('darkMode', 'disabled');
-        darkModeToggle.innerHTML = '<i class="fas fa-moon me-1"></i> Mode Gelap';
+        darkModeToggle.innerHTML = '<i class="fas fa-moon me-1"></i>';
     }
 });
 
 // Check for saved dark mode preference
 if (localStorage.getItem('darkMode') === 'enabled') {
     document.body.classList.add('dark-mode');
-    darkModeToggle.innerHTML = '<i class="fas fa-sun me-1"></i> Mode Terang';
+    darkModeToggle.innerHTML = '<i class="fas fa-sun me-1"></i>';
 }
 
 // Quick Add Transaction
