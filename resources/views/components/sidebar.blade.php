@@ -15,28 +15,29 @@
                             <div class="side-menu__title"> Dashboard </div>
                         </a>
                     </li>
+                    {{-- //uang masuk atau uang keluar================ --}}
                     <li>
                         <a href="javascript:;" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="box"></i> </div>
-                            <div class="side-menu__title"> Menu Layout <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
+                            <div class="side-menu__title"> Data <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
                         </a>
                         <ul class="">
                             <li>
                                 <a href="index.html" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Side Menu </div>
+                                    <div class="side-menu__title"> Saldo</div>
                                 </a>
                             </li>
                             <li>
                                 <a href="simple-menu-dashboard.html" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Simple Menu </div>
+                                    <div class="side-menu__title"> Uang Masuk</div>
                                 </a>
                             </li>
                             <li>
-                                <a href="top-menu-dashboard.html" class="side-menu">
+                                <a href="simple-menu-dashboard.html" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Top Menu </div>
+                                    <div class="side-menu__title"> Uang Keluar</div>
                                 </a>
                             </li>
                         </ul>
@@ -44,16 +45,16 @@
                     <li>
                         <a href="side-menu-inbox.html" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="inbox"></i> </div>
-                            <div class="side-menu__title"> Inbox </div>
+                            <div class="side-menu__title"> Tambah Pemasukan </div>
                         </a>
                     </li>
                     <li>
                         <a href="side-menu-file-manager.html" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="hard-drive"></i> </div>
-                            <div class="side-menu__title"> File Manager </div>
+                            <div class="side-menu__title"> Tambah Pengeluaran </div>
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="side-menu-point-of-sale.html" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="credit-card"></i> </div>
                             <div class="side-menu__title"> Point of Sale </div>
@@ -70,9 +71,11 @@
                             <div class="side-menu__icon"> <i data-feather="file-text"></i> </div>
                             <div class="side-menu__title"> Post </div>
                         </a>
-                    </li>
+                    </li> --}}
+
+                    {{-- pengaturan lebih lanjut================================ --}}
                     <li class="side-nav__devider my-6"></li>
-                    <li>
+                    {{-- <li>
                         <a href="javascript:;" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="edit"></i> </div>
                             <div class="side-menu__title"> Crud <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
@@ -91,7 +94,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="javascript:;" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="users"></i> </div>
@@ -99,21 +102,15 @@
                         </a>
                         <ul class="">
                             <li>
-                                <a href="side-menu-users-layout-1.html" class="side-menu">
+                                <a href="{{ route('kelolaUser') }}" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Layout 1 </div>
+                                    <div class="side-menu__title"> Data user </div>
                                 </a>
                             </li>
                             <li>
                                 <a href="side-menu-users-layout-2.html" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Layout 2 </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="side-menu-users-layout-3.html" class="side-menu">
-                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Layout 3 </div>
+                                    <div class="side-menu__title"> Kelola user </div>
                                 </a>
                             </li>
                         </ul>

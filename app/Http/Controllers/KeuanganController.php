@@ -2,64 +2,52 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\keuangan;
+use App\Models\Keuangan;
+use App\Models\Saldo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KeuanganController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $keuangans = Keuangan::with('category', 'user')->latest()->get();
+        $saldo = Saldo::first()->saldo ?? 0;
+        $pemasukan = Keuangan::where('jenis', 'pemasukan')->sum('nominal');
+        $pengeluaran = Keuangan::where('jenis', 'pengeluaran')->sum('nominal');
+
+        return response()->json([
+            'saldo' => $saldo,
+            'total_pemasukan' => $pemasukan,
+            'total_pengeluaran' => $pengeluaran,
+            'data' => $keuangans
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $data = $request->validate([
+            'keterangan' => 'nullable|string',
+            'tanggal' => 'required|date',
+            'jenis' => 'required|in:pemasukan,pengeluaran',
+            'nominal' => 'required|numeric|min:0',
+            'category_id' => 'nullable|exists:categories,id',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(keuangan $keuangan)
-    {
-        //
-    }
+        $data['username'] = Auth::user()->name;
+        $data['user_id'] = Auth::id();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(keuangan $keuangan)
-    {
-        //
-    }
+        $keuangan = Keuangan::create($data);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, keuangan $keuangan)
-    {
-        //
-    }
+        // update saldo
+        $saldo = Saldo::firstOrCreate(['id' => 1], ['saldo' => 0]);
+        if ($keuangan->jenis === 'pemasukan') {
+            $saldo->saldo += $keuangan->nominal;
+        } else {
+            $saldo->saldo -= $keuangan->nominal;
+        }
+        $saldo->save();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(keuangan $keuangan)
-    {
-        //
+        return response()->json(['message' => 'Data berhasil disimpan']);
     }
 }

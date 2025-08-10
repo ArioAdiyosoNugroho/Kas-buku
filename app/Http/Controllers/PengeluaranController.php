@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\saldo;
+use App\Models\pengeluaran;
 use Illuminate\Http\Request;
 
-class SaldoController extends Controller
+class PengeluaranController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('');
+        //
     }
 
     /**
@@ -34,7 +34,7 @@ class SaldoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(saldo $saldo)
+    public function show(pengeluaran $pengeluaran)
     {
         //
     }
@@ -42,7 +42,7 @@ class SaldoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(saldo $saldo)
+    public function edit(pengeluaran $pengeluaran)
     {
         //
     }
@@ -50,7 +50,7 @@ class SaldoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, saldo $saldo)
+    public function update(Request $request, pengeluaran $pengeluaran)
     {
         //
     }
@@ -58,7 +58,7 @@ class SaldoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(saldo $saldo)
+    public function destroy(pengeluaran $pengeluaran)
     {
         //
     }
